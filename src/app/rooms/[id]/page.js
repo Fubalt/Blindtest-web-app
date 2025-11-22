@@ -95,6 +95,8 @@ function RoomPageContent() {
 
     const [roundState, setRoundState] = useState({ title: false, artist: false });
     const [startTime, setStartTime] = useState(0);
+    const [timeLeft, setTimeLeft] = useState(30);
+    const timerRef = useRef(null);
 
     useEffect(() => {
         if (room?.status === 'playing' && room?.songs?.[room.current_song_index]) {
